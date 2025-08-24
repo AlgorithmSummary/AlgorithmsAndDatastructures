@@ -62,51 +62,57 @@ INSERTION_SORT(A):
 - **점화식**: `T(n) = 2T(n/2) + Θ(n)`, `T(1)=Θ(1)`.
 - **의사코드(0-기반, 경계 명시)**
 ```cpp
-void MERGE(int* A,int l,int m,int r){
-  
-  n1 = m - l + 1;
-  n2 = r - m;
+#include <iostream>
+#include <vector>
 
-  for(int i = 0; i < n1; i++)
-    L[i] = A[l + i];
-  for(int i = 0; i < n2; i++)
-    R[i] = A[m + 1 + i];
-  
-  i = j = 0;
-  k = l;
- // restore i, j, k
+using namespace std;
 
-  while (i < n1 &&& j < n2){
-    if (L[i] ≤ R[j]){
-      A[k] = L[i];
-      i++;
+void MERGE(vector<int>&A, int l, int m,  int r){
+
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    vector<int>L(n1, 0), R(n2, 0);
+
+
+    for(int i = 0; i < n1; i++)
+        L[i] = A[l + i];
+    for(int i = 0; i < n2; i++)
+        R[i] = A[m + 1 + i];
+
+    int i = 0, j = 0;
+    int k = l;
+
+    while(i < n1 && j < n2){
+        if(L[i] <= R[j]){
+            A[k] = L[i];
+            i++;
+        } else {
+            A[k] = R[j];
+            j++;
+        }
+        k++;
     }
-    else{
-      A[k] = R[j]; 
-      j++;
+    while(i < n1){
+        A[k] = L[i];
+        i++;
+        k++;
     }
-    k++;
-  }// swap the small value to A[k]
+    while(j < n2){
+        A[k] = R[j];
+        j++;
+        k++;
+    }
 
-
-  while (i < n1)
-    A[k] = L[i];
-    i++; 
-    k++;
-  while (j < n2)
-    A[k] = L[j];
-    j++; 
-    k++;
 }
-void MERGE_SORT(A, l, r){
-  if (l >= r)
-    return;
 
-  m = (l + r) >> 2;
-  MERGE_SORT(A, l, m);
-  MERGE_SORT(A, m+1, r);
-  MERGE(A, l, m, r);
-  // recursionFunctions.
+void MERGE_SORT(vector<int>&A, int l, int r){
+    if(l >= r)
+        return;
+    int m = (l + r) >> 1;
+    MERGE_SORT(A, l, m);
+    MERGE_SORT(A, m + 1, r);
+    MERGE(A, l, m, r);
 }
 ```
 - **MERGE 루프 불변식**: 루프 진입 시마다 `A[l..k-1]`은 `L[i..] ∪ R[j..]` 중 가장 작은 `(k-l)`개가 **정렬** 상태.
