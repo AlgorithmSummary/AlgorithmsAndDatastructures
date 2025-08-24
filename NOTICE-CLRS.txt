@@ -1,0 +1,24 @@
+NOTICE — Referencing CLRS (Introduction to Algorithms)
+
+This repository contains *original notes* written after studying
+*Introduction to Algorithms* (Cormen, Leiserson, Rivest, Stein; MIT Press).
+The book is copyrighted. We are **not** redistributing any of its content.
+
+What is allowed in this repo:
+  • Paraphrased explanations in your own words.
+  • Pseudocode or code you wrote yourself (not copied verbatim from the book).
+  • Short quotations (if truly necessary) with proper bibliographic citation,
+    kept minimal and clearly marked as quotes.
+  • References to page/chapter numbers.
+
+What is NOT allowed:
+  • Scanning or reproducing figures, tables, or long verbatim text from CLRS.
+  • Copying any substantial part of the book’s text or exercises.
+
+Suggested bibliography entry (example):
+  Cormen, Thomas H., Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein.
+  *Introduction to Algorithms*, 3rd ed. MIT Press, 2009.
+
+Disclaimer:
+  This project is independent and not affiliated with the authors or MIT Press.
+  All trademarks and copyrights are the property of their respective owners.
