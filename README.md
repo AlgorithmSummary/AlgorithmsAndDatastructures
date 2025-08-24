@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 알고리즘 & 자료구조 (Algorithms & Data Structures)
 
 ## 1. 소개
@@ -18,7 +17,3 @@
 ## 4. 향후 추가 예정
 - 그래프/DP/그리디/분할정복 등 알고리즘 심화
 - 기본/고급 자료구조 구현과 실수 포인트 정리
-=======
-# AlgorithmsAndDatastructures
-With Algorithms and DataStructures
->>>>>>> 0aed153c43508f5cdd40872d9f10ddb5c324079c
